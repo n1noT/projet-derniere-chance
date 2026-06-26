@@ -1,0 +1,19 @@
+# Claude Code
+.claude/
+
+# Secrets
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Extension packagée
+*.crx
+*.pem
+*.zip
+
+# Éditeurs
+.vscode/
+.idea/
+*.suo

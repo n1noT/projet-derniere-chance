@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Dernière Chance",
+  "version": "1.0.0",
+  "description": "Sauvegarde les films/séries et leurs dates d'expiration dans Google Sheets",
+  "permissions": [
+    "identity",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.canalplus.com/*",
+    "https://sheets.googleapis.com/*",
+    "https://hodor.canalplus.pro/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Dernière Chance",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "128": "icons/128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.canalplus.com/*"],
+      "js": ["content/canal-plus-interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.canalplus.com/*"],
+      "js": ["content/canal-plus.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "oauth2": {
+    "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets"
+    ]
+  }
+}
