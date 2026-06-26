@@ -1,4 +1,4 @@
-# Dernière Chance
+# Projet Dernière Chance
 
 Extension Chrome qui capture automatiquement les films depuis CANAL+ et les enregistre dans un Google Sheets avec leur date d'expiration.
 
@@ -16,8 +16,8 @@ Extension Chrome qui capture automatiquement les films depuis CANAL+ et les enre
 ### 1. Cloner le repo
 
 ```bash
-git clone https://github.com/votre-user/derniere-chance.git
-cd derniere-chance
+git clone https://github.com/n1noT/projet-derniere-chance.git
+cd projet-derniere-chance
 ```
 
 ### 2. Configurer les credentials Google
@@ -28,7 +28,7 @@ cd derniere-chance
 2. Créer un nouveau projet
 3. Activer l'API **Google Sheets**
 4. Aller dans **APIs & Services → Identifiants → Créer des identifiants → ID client OAuth**
-5. Choisir le type **Application Chrome**
+5. Choisir le type **Extension Chrome** → Aller à la partie 3 pour récupérer l'ID d'extension
 6. Copier le **Client ID** obtenu
 
 #### b. Renseigner le `.env`
@@ -55,6 +55,7 @@ node setup.js
 2. Activer le **mode développeur**
 3. Cliquer **Charger l'extension non empaquetée**
 4. Sélectionner ce dossier
+5. Récupérer l'ID d'extension pour l'OAuth sur la page `chrome://extensions`
 
 ### 4. Préparer le Google Sheets
 
@@ -78,7 +79,7 @@ Créer un Google Sheets avec les colonnes dans cet ordre :
 
 1. Naviguer vers une fiche film sur [CANAL+](https://www.canalplus.com)
 2. Cliquer sur l'icône de l'extension
-3. Vérifier les champs extraits automatiquement
+3. Vérifier les champs extraits automatiquement (Il est possible qu'au premier chargement de canal+ les champs ne se remplissent pas automatiquement, recharger simplement la page)
 4. Cocher **DVD / Blu-ray** si vous possédez le film physiquement
 5. Cliquer **＋ Ajouter à Sheets**
 
